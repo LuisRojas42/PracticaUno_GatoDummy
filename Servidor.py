@@ -145,11 +145,65 @@ try:
                     break
             else:
                 print("5")
-                if msgFromServer[1:5].find("xxxxx") >= 0 or msgFromServer[7:11] == "xxxxx" or msgFromServer[13:17] == "xxxxx" or msgFromServer[19:23] == "xxxxx" or msgFromServer[25:29] == "xxxxx":
+                if msgFromServer[1:6].find("xxxxx") >= 0 \
+                        or msgFromServer[7:12].find("xxxxx") >= 0 \
+                        or msgFromServer[13:18].find("xxxxx") >= 0 \
+                        or msgFromServer[19:24].find("xxxxx") >= 0 \
+                        or msgFromServer[25:30].find("xxxxx") >= 0:
                     msgFromServer = "ganaste"
                     bytesToSend = str.encode(msgFromServer)
                     UDPServerSocket.sendto(bytesToSend, address)
                     break
+                if msgFromServer[1] == msgFromServer[7] \
+                    and msgFromServer[7] == msgFromServer[13] \
+                        and msgFromServer[13] == msgFromServer[19] \
+                        and msgFromServer[19] == msgFromServer[25] \
+                        and msgFromServer[1] != "-":
+                    msgFromServer = "ganaste"
+                    bytesToSend = str.encode(msgFromServer)
+                    UDPServerSocket.sendto(bytesToSend, address)
+                    break
+
+                if msgFromServer[2] == msgFromServer[8] \
+                    and msgFromServer[8] == msgFromServer[14] \
+                        and msgFromServer[14] == msgFromServer[20] \
+                        and msgFromServer[20] == msgFromServer[26] \
+                        and msgFromServer[2] != "-":
+                    msgFromServer = "ganaste"
+                    bytesToSend = str.encode(msgFromServer)
+                    UDPServerSocket.sendto(bytesToSend, address)
+                    break
+
+                if msgFromServer[3] == msgFromServer[9] \
+                    and msgFromServer[9] == msgFromServer[15] \
+                        and msgFromServer[15] == msgFromServer[21] \
+                        and msgFromServer[21] == msgFromServer[27] \
+                        and msgFromServer[3] != "-":
+                    msgFromServer = "ganaste"
+                    bytesToSend = str.encode(msgFromServer)
+                    UDPServerSocket.sendto(bytesToSend, address)
+                    break
+
+                if msgFromServer[4] == msgFromServer[10] \
+                    and msgFromServer[10] == msgFromServer[16] \
+                        and msgFromServer[16] == msgFromServer[22] \
+                        and msgFromServer[22] == msgFromServer[28] \
+                        and msgFromServer[4] != "-":
+                    msgFromServer = "ganaste"
+                    bytesToSend = str.encode(msgFromServer)
+                    UDPServerSocket.sendto(bytesToSend, address)
+                    break
+
+                if msgFromServer[5] == msgFromServer[11] \
+                    and msgFromServer[11] == msgFromServer[17] \
+                        and msgFromServer[17] == msgFromServer[23] \
+                        and msgFromServer[23] == msgFromServer[29] \
+                        and msgFromServer[29] != "-":
+                    msgFromServer = "ganaste"
+                    bytesToSend = str.encode(msgFromServer)
+                    UDPServerSocket.sendto(bytesToSend, address)
+                    break
+
             print(posiciones, "\n")
             bytesToSend = str.encode(msgFromServer)
             UDPServerSocket.sendto(bytesToSend, address)
